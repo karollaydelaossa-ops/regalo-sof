@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti 🤍</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ================= PORTADA ================= -->
+  <section id="portada" class="vista activa">
+    <div class="contenedor">
+      <p class="texto-portada">
+        Hice este espacio para ti.<br />
+        Para los días buenos,<br />
+        los raros<br />
+        y los que no sabes explicar.
+      </p>
+
+      <button class="btn-principal" id="btnEntrar">Entrar</button>
+    </div>
+  </section>
+
+  <!-- ================= MOODS ================= -->
+  <section id="moods" class="vista">
+    <div class="contenedor">
+      <p class="titulo-secundario">¿Cómo te sientes hoy?</p>
+
+      <div class="grid-moods">
+        <button class="mood-btn" data-mood="feliz">😊 Feliz</button>
+        <button class="mood-btn" data-mood="triste">😔 Triste</button>
+        <button class="mood-btn" data-mood="cansada">😴 Cansada</button>
+        <button class="mood-btn" data-mood="ansiosa">😣 Ansiosa</button>
+        <button class="mood-btn" data-mood="pensativa">💭 Pensativa</button>
+        <button class="mood-btn" data-mood="nose">❔ No sé</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CARTA ================= -->
+  <section id="carta" class="vista">
+    <div class="contenedor carta-contenedor">
+
+      <img id="fotoMood" src="" alt="Recuerdo" class="foto-mood" />
+
+      <p id="textoCarta" class="texto-carta"></p>
+
+      <a id="linkCancion" href="#" target="_blank" class="link-cancion">
+        🎵 Escuchar canción
+      </a>
+
+      <button id="btnFotos" class="btn-suave">Ver recuerdos</button>
+      <button id="btnVolver" class="btn-secundario">← Cambiar mood</button>
+    </div>
+  </section>
+
+  <section id="fotos" class="vista">
+  <h2 class="titulo">Momentos que viven aquí</h2>
+
+  <div class="galeria">
+    <img src="assets/fotos/1.jpeg" alt="recuerdo 1" class="foto">
+    <img src="assets/fotos/2.jpeg" alt="recuerdo 2" class="foto">
+    <img src="assets/fotos/3.jpeg" alt="recuerdo 3" class="foto">
+  </div>
+
+  <button id="btnFinal" class="btn-suave">Seguir</button>
+</section>
+
+  <!-- ================= SECCIÓN FINAL ================= -->
+  <section id="final" class="vista vista-final">
+  <div class="final-contenido">
+    <h2 class="final-titulo">Y si ningún mood encaja, recuerda esto…</h2>
+
+    <p class="final-texto">
+      No importa cómo te sientas hoy, o si no sabes cómo llamarlo.
+      Tu existencia no depende de tener todo claro.
+      <br><br>
+      Eres valiosa incluso en los días confusos,
+      incluso cuando no brillas,
+      incluso cuando dudas.
+      <br><br>
+      Y no estás sola.
+      Vas a tenerme aquí hasta el día que mi corazón deje de latir.
+    </p>
+  </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
