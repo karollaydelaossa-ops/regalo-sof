@@ -1,11 +1,3 @@
-/* ================= VARIABLES ================= */
-:root {
-  --fondo: #F9F9F7;
-  --texto-principal: #2E2E2E;
-  --texto-secundario: #6B6B6B;
-  --acento: #C7B8A3;
-}
-
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -14,16 +6,17 @@
 }
 
 body {
-  background: var(--fondo);
-  color: var(--texto-principal);
   font-family: 'Inter', sans-serif;
-  min-height: 100vh;
+  background-color: #fafafa;
+  color: #222;
+  overflow: hidden;
 }
 
 /* ================= VISTAS ================= */
 .vista {
   display: none;
   min-height: 100vh;
+  width: 100%;
   padding: 40px 20px;
 }
 
@@ -31,141 +24,144 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 0.8s ease forwards;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================= CONTENEDORES ================= */
 .contenedor {
   max-width: 600px;
   width: 100%;
   text-align: center;
 }
 
-.carta-contenedor {
-  text-align: left;
-}
-
 /* ================= PORTADA ================= */
 .texto-portada {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 40px;
 }
 
-/* ================= TEXTOS ================= */
-.titulo-secundario {
+.btn-principal {
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
   font-size: 1rem;
-  color: var(--texto-secundario);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ================= MOODS ================= */
+.titulo-secundario {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
   margin-bottom: 30px;
 }
 
+.grid-moods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.mood-btn {
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* ================= CARTA ================= */
+.carta-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.foto-mood {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
 .texto-carta {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin: 30px 0;
-}
-
-.titulo-final {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.texto-final {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--texto-secundario);
 }
 
-/* ================= BOTONES ================= */
-.btn-principal {
-  padding: 12px 32px;
-  border: none;
-  border-radius: 30px;
-  background: var(--acento);
-  color: #fff;
-  font-size: 0.9rem;
+.link-cancion {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.btn-suave {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 12px 24px;
+  border-radius: 999px;
   cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.btn-principal:hover {
-  opacity: 0.85;
 }
 
 .btn-secundario {
   background: none;
   border: none;
-  color: var(--texto-secundario);
-  font-size: 0.8rem;
-  margin-top: 40px;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
-/* ================= MOODS ================= */
-.grid-moods {
+/* ================= FOTOS / RECUERDOS ================= */
+#fotos {
+  align-items: flex-start; /* importante para scroll */
+  overflow-y: auto;
+}
+
+.titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.galeria {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 30px 0;
 }
 
-.mood-btn {
-  padding: 14px;
-  border-radius: 16px;
-  border: 1px solid #E0E0E0;
-  background: transparent;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.mood-btn:hover {
-  background: rgba(199, 184, 163, 0.15);
-  transform: translateY(-2px);
-}
-
-/* ================= CARTA ================= */
-.foto-mood {
+.foto {
   width: 100%;
-  max-height: 260px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 16px;
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
+  border-radius: 12px;
 }
 
-.link-cancion {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--acento);
-  text-decoration: none;
-  font-size: 0.9rem;
+#btnFinal {
+  margin: 30px auto 10px;
+  display: block;
 }
 
-.link-cancion:hover {
-  text-decoration: underline;
+/* ================= FINAL ================= */
+.vista-final {
+  background-color: #111;
+  color: #f5f5f5;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 480px) {
-  .texto-portada {
-    font-size: 1.5rem;
-  }
+.final-contenido {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
 
-  .texto-carta {
-    font-size: 1rem;
-  }
+.final-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.final-texto {
+  font-size: 1rem;
+  line-height: 1.7;
 }
