@@ -9,7 +9,8 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #fafafa;
   color: #222;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto; /* ✅ permite scroll vertical */
 }
 
 /* ================= VISTAS ================= */
@@ -23,9 +24,14 @@ body {
 .vista.activa {
   display: flex;
   justify-content: center;
+  align-items: flex-start; /* ✅ evita cortar contenido largo */
+}
+
+#portada.activa {
   align-items: center;
 }
 
+/* ================= CONTENEDOR ================= */
 .contenedor {
   max-width: 600px;
   width: 100%;
@@ -113,8 +119,10 @@ body {
 
 /* ================= FOTOS / RECUERDOS ================= */
 #fotos {
-  align-items: flex-start; /* importante para scroll */
-  overflow-y: auto;
+  align-items: flex-start;
+  min-height: 100vh;
+  overflow-y: auto; /* ✅ scroll permitido */
+  padding-bottom: 80px; /* espacio para respirar abajo */
 }
 
 .titulo {
